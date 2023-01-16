@@ -1,0 +1,69 @@
+<!-- <h1>To way binding</h1>
+
+<h2>Binding mediante ngModel</h2>
+<input type="text" name="datos" [(ngModel)]="datos">
+{{datos}} -->
+
+
+
+<!-- Reto -->
+<main>
+    <section class="p-5">
+        <h1>{{titulo}}</h1>
+        <hr>
+        <p>Event binding</p>
+        <button (click)="ver()" class="btn btn-primary">{{valor}}</button>
+        <section class="mt-2" *ngIf="mostrar">
+            Event Binding, es el mecanismo Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Corporis,Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto odit nostrum repellendus eaque
+            rerum
+            tenetur. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur, vitae!
+        </section>
+        <hr>
+
+        <p>Two way binding</p>
+        <p class="mt-3">{{texto}}</p>
+
+        <textarea class="form-control" name="text" id="" rows="3" [(ngModel)]="texto"></textarea>
+    </section>
+</main>
+
+
+<!-- Tarea Asincrona -->
+
+<section class="container">
+    <h1 class="color text-center">Formulario de Registro</h1>
+    <form class="form-group">
+        <label for="" class="m-2">Nombre:</label>
+        <input type="text" name="nombre" [(ngModel)]="n" class="form-control">
+        <label for="" class="m-2">Apellido:</label>
+        <input type="text" name="apellido" [(ngModel)]="a" class="form-control">
+        <label for="" class="m-2">Carrera:</label>
+        <input type="text" name="carrera" [(ngModel)]="c" class="form-control">
+        <section class="boton">
+            <input type="button" value="Guardar" (click)="Agregar()" class="btn btn-primary my-5">
+        </section>
+    </form>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Nro</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Carrera</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of datos1; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{row.Nombre}}</td>
+                <td>{{row.Apellido}}</td>
+                <td>{{row.Carrera}}</td>
+                <td>
+                    <button class="btn btn-danger" value={{i}} (click)="Eliminar(i)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
